@@ -4,6 +4,9 @@ export function ordenarRegistros(registros, { valor, tipo = 'texto', direcao = '
   if (typeof valor !== 'function') throw new TypeError('Expected a value selector');
   if (!['texto', 'numero', 'inteiro'].includes(tipo)) throw new TypeError('Unsupported value type');
   if (!['asc', 'desc'].includes(direcao)) throw new TypeError('Unsupported sort direction');
+  for (let indice = 0; indice < registros.length; indice++) {
+    if (!Object.hasOwn(registros, indice)) throw new TypeError(`Missing row at index ${indice}`);
+  }
   const colator = tipo === 'texto' ? new Intl.Collator(idioma, { numeric: true, sensitivity: 'base' }) : null;
   const linhas = registros.map((registro, indice) => {
     const campo = valor(registro);

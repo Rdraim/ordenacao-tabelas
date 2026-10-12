@@ -34,3 +34,9 @@ test('selector runs exactly once per row', () => {
   ordenarRegistros([3, 1, 2], { valor: r => { chamadas++; return r; }, tipo: 'numero' });
   assert.equal(chamadas, 3);
 });
+
+test('sparse rows fail explicitly instead of preserving invisible holes', () => {
+  const registros = new Array(2);
+  registros[1] = 'Item 1';
+  assert.throws(() => ordenarRegistros(registros, { valor: r => r }), /Missing row/);
+});
