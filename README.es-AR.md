@@ -82,7 +82,7 @@ Para repetir el chequeo, usá TypeScript instalado en tu entorno:
 tsc --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext test-types/consumer.mts
 ```
 
-## Nueva versión — 1.1.0
+## Nueva versión — 1.1.1
 
 Agrega tipos genéricos, documentación y regresión para arrays dispersos: las filas ausentes generan error explícito.
 

@@ -6,6 +6,10 @@
 
 # Changelog
 
+## 1.1.1 — 2026-10-12
+
+Fixes inclusion of examples and verification files referenced by documentation; adds package checks to CI. No runtime change.
+
 ## 1.1.0 — 2026-10-12
 
 Adds generic types, documentation and a sparse-array regression: missing rows now fail explicitly.
